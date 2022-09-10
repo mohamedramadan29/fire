@@ -87,7 +87,6 @@
                     $errors .
                     '</div>';
             }
-
             if (empty($formerror)) {
                 $stmt = $connect->prepare("INSERT INTO company (com_name,com_email,
                 com_mobile,num_visit,start,end,address,com_active,com_note)
@@ -106,14 +105,44 @@
                 ]);
                 if ($stmt) { ?>
     <div class="alert-success">
-        تم اضافة شركة جديدة بنجاح
-        <?php header('refresh:3;url=main.php?dir=company&page=report'); ?>
-
+       
     </div>
 
 </div>
 
-<?php }
+<?php 
+
+$stmt = $connect->prepare('SELECT * FROM company ORDER BY com_id DESC LIMIT 1');
+$stmt->execute();
+$allcom = $stmt->fetchAll();
+foreach($allcom as $com){
+    $start_date = $com['start'];
+    $date1 = strtotime($start_date);
+    $end_date = $com['end'];
+    $date2 = strtotime($end_date);
+    $visit_num = $com['num_visit'];
+    $correct_date  = $date2 - $date1;
+    $correct_date  = abs(round($correct_date/86400));
+    $time_to_visit = ceil($correct_date / $visit_num);
+    $sales_due_date =  date("Y/d/m");
+        for($i=0; $i < $visit_num; $i++){
+            $due_dates[] = $sales_due_date;
+            $time = date('Y-m-d', strtotime('+' . $time_to_visit . 'day', strtotime($sales_due_date)));
+            $sales_due_date = $time;
+        $stmt  =$connect->prepare('INSERT INTO appointsment (com_id,visit_date)
+        VALUES(:zcom_id,:zvisit_date)');
+        $stmt->execute(array(
+            'zcom_id'=>$com['com_id'],
+            'zvisit_date'=>$time
+        ));
+        }
+}
+?>
+
+تم اضافة شركة جديدة بنجاح
+<?php header('refresh:3;url=main.php?dir=company&page=report'); ?> 
+<?php
+}
             }
         }
     }

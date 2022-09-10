@@ -122,7 +122,6 @@ if (isset($_GET['com_id']) && is_numeric($_GET['com_id'])) {
                         $com_note,
                         $com_id,
                     ]);
-
                     if ($stmt) { ?>
 <div class="container">
     <div class="alert-success">

@@ -32,6 +32,9 @@ include $tem . 'left_sidebar.php';
         elseif ($dir == 'company' && $page == 'visits') {
             include 'company/visits.php';
         }
+        elseif ($dir == 'company' && $page == 'edit_visit') {
+            include 'company/edit_visit.php';
+        }
         // END COMPANY
         // END NEW WEBSITE
         // START REPORTS

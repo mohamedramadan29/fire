@@ -33,7 +33,7 @@
                         <td><?php echo $type['com_name']; ?> </td>
                         <td><?php echo $type['com_mobile']; ?> </td>
                         <td><?php echo $type['com_email']; ?> </td>
-                        <td class="bg-gradient-info"> <a href="main.php?dir=company&page=visits&com_id=<?php echo $type['com_id']; ?>"> <?php echo $type['num_visit']; ?>  </a> </td>
+                        <td class="bg-gradient-info"> <a href="main.php?dir=company&page=visits&com_id=<?php echo $type['com_id']; ?>"> مشاهدة الزيارات <?php // echo $type['num_visit']; ?>  </a> </td>
                         <td><?php echo $type['start']; ?> </td>
                         <td><?php echo $type['end']; ?> </td>
                         <td>
