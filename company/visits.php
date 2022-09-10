@@ -37,9 +37,13 @@ if (isset($_GET['com_id']) && is_numeric($_GET['com_id'])) {
         echo ceil($time_to_visit);
         $datevisit = 1;
         echo "</br>" ;
+        
         for($i=0; $i< $visit_num; $i++){
-            echo $start_date + $time_to_visit;
-            echo date('Y-m-d', strtotime($start_date. ' +'+  $time_to_visit +'days'));
+            $Date1 = $start_date;
+            $date = new DateTime($Date1);
+            $date->modify('+'. $time_to_visit .'day');
+            $Date2 = $date->format('Y-m-d');
+            echo $Date2;
             echo "</br>" ;
         }
         ?>
