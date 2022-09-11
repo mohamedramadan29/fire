@@ -85,11 +85,8 @@
                     <!--  <div class="alert-success">
 
                     </div> -->
-
 </div>
-
 <?php
-
                     $stmt = $connect->prepare('SELECT * FROM company ORDER BY com_id DESC LIMIT 1');
                     $stmt->execute();
                     $allcom = $stmt->fetchAll();
