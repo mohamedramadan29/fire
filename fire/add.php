@@ -6,7 +6,7 @@
                     <li class="breadcrumb-item"> <i class="fa fa-heart"></i> <a
                             href="main.php?dir=dashboard&page=dashboard"> <?php echo $lang['website_title']; ?></a> <i
                             class="fa fa-chevron-left"></i> </li>
-                    <li class="breadcrumb-item active" aria-current="page"> اضافة شركة جديدة </li>
+                    <li class="breadcrumb-item active" aria-current="page"> اضافة طفاية جديد </li>
                 </ol>
             </nav>
         </div>
@@ -15,31 +15,19 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="box2">
-                            <label id="name"> اسم الشركة <span> * </span> </label>
-                            <input required class="form-control" type="text" name="com_name">
+                            <label id="name">  الاسم <span> * </span> </label>
+                            <input required class="form-control" type="text" name="name">
                         </div>
                         <div class="box2">
-                            <label id="name_en"> رقم الهاتف <span> * </span></label>
-                            <input class="form-control" type="tel" name="com_mobile">
-                        </div>
-                        <div class="box2">
-                            <label id="car_model"> البريد الالكتروني  <span> * </span></label>
-                            <input class="form-control" type="email" name="com_email">
-                        </div>
-                        <div class="box2">
-                            <label id="car_model"> العنوان <span> * </span></label>
-                            <input class="form-control" type="text" name="address">
-                        </div>
-                        <div class="box2">
-                            <label id="car_model"> بداية العقد </label>
+                            <label id="car_model"> بداية الصيانه </label>
                             <input class="form-control" type="date" name="start">
                         </div>
                         <div class="box2">
-                            <label id="car_model"> نهاية العقد </label>
+                            <label id="car_model"> نهاية الصيانه </label>
                             <input class="form-control" type="date" name="end">
                         </div>
                         <div class="box2">
-                            <label id="car_pricepay"> عدد الزيارات <span> * </span> </label>
+                            <label id="car_pricepay">  <span> * </span> </label>
                             <input class="form-control" type="number" name="num_visit" required>
                         </div>
                         <div class="box2">
