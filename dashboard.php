@@ -17,6 +17,7 @@ if (isset($_SESSION['admin_name'])) { ?>
         </div>
     </div>
 
+   
     <div class="row">
         <div class="col-lg-3">
             <div class="small_box">
@@ -24,7 +25,7 @@ if (isset($_SESSION['admin_name'])) { ?>
                     <span> <i class="fa fa-cart-plus"></i> </span>
                 </div>
                 <div class="inner">
-                    <span> <?php echo $lang['cars']; ?></span>
+                    <span> المواقع والمصانع </span>
                     <?php
                         $stmt = $connect->prepare(
                             'SELECT COUNT(com_id) FROM company'
@@ -35,8 +36,8 @@ if (isset($_SESSION['admin_name'])) { ?>
                     <h3> <?php echo $count; ?> </h3>
                 </div>
                 <div class="small_box_footer">
-                    <p> <a href="main.php?dir=cars&page=add"> <?php echo $lang['add']; ?> </a> </p>
-                    <p> <a href="main.php?dir=cars&page=report"> <?php echo $lang['watch_cars']; ?></a> </p>
+                    <p> <a href="main.php?dir=company&page=add"> <?php echo $lang['add']; ?> </a> </p>
+                    <p> <a href="main.php?dir=company&page=report"> مشاهدة الشركات </a> </p>
                 </div>
             </div>
         </div>
@@ -46,10 +47,10 @@ if (isset($_SESSION['admin_name'])) { ?>
                     <span> <i class="fa fa-cart-plus"></i> </span>
                 </div>
                 <div class="inner">
-                    <span> <?php echo $lang['booking']; ?> </span>
+                    <span> صيانة </span>
                     <?php
                         $stmt = $connect->prepare(
-                            'SELECT COUNT(com_id) FROM company'
+                            'SELECT COUNT(fire_id) FROM fire'
                         );
                         $stmt->execute();
                         $count = $stmt->fetchcolumn();
@@ -57,7 +58,8 @@ if (isset($_SESSION['admin_name'])) { ?>
                     <h3> <?php echo $count; ?> </h3>
                 </div>
                 <div class="small_box_footer">
-                    <p> <a href="main.php?dir=rental&page=report"> <?php echo $lang['watch_booking']; ?> </a> </p>
+                    <p> <a href="main.php?dir=fire&page=add"> <?php echo $lang['add']; ?> </a> </p>
+                    <p> <a href="main.php?dir=fire&page=report"> مشاهدة الصيانات </a> </p>
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@ include 'init.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['username'];
     $password = $_POST['password'];
-    echo $name;
+    
     $stmt = $connect->prepare(
         'SELECT * FROM admin WHERE admin_name=? AND admin_password=?'
     );
@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $admindata = $stmt->rowcount();
     if ($admindata > 0) {
         $_SESSION['admin_name'] = $name;
+        $_SESSION['admin_id'] = $data['admin_id'];
         header('Location:main.php?dir=dashboard&page=dashboard&lang=ar');
         exit();
     }

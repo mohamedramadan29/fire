@@ -21,8 +21,11 @@ if (isset($_GET['dir'])) {
         include 'users/lang/' . $_SESSION['lang'] . '.php';
     } elseif ($dir == 'dashboard') {
         include 'dashboard/lang/' . $_SESSION['lang'] . '.php';
-    }elseif ($dir == 'rental') {
-        include 'rental/lang/' . $_SESSION['lang'] . '.php';
+    }elseif ($dir == 'profile') {
+        include 'profile/lang/' . $_SESSION['lang'] . '.php';
+    }
+    elseif ($dir == 'fire') {
+        include 'fire/lang/' . $_SESSION['lang'] . '.php';
     }
 } else {
     include 'languages/lang/' . $_SESSION['lang'] . '.php';

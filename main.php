@@ -36,6 +36,28 @@ include $tem . 'left_sidebar.php';
             include 'company/edit_visit.php';
         }
         // END COMPANY
+        // START ADMIN PROFILE
+        if ($dir == 'profile' && $page == 'edit') {
+            include 'profile/edit.php';
+        } 
+        // START COMPANY
+        if ($dir == 'fire' && $page == 'add') {
+            include 'fire/add.php';
+        } elseif ($dir == 'fire' && $page == 'edit') {
+            include 'fire/edit.php';
+        } elseif ($dir == 'fire' && $page == 'delete') {
+            include 'fire/delete.php';
+        } elseif ($dir == 'fire' && $page == 'report') {
+            include 'fire/report.php';
+        }
+        elseif ($dir == 'fire' && $page == 'visits') {
+            include 'fire/visits.php';
+        }
+        elseif ($dir == 'fire' && $page == 'edit_visit') {
+            include 'fire/edit_visit.php';
+        }
+        // END COMPANY
+        // END ADMIN PROFILE
         // END NEW WEBSITE
         // START REPORTS
         elseif ($dir = 'dashboard' && $page == 'dashboard') {
