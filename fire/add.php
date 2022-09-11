@@ -9,6 +9,8 @@
             </nav>
         </div>
         <div class="myform">
+
+
             <form class="form-group insert" method="POST" autocomplete="on" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-lg-12">
@@ -25,8 +27,8 @@
                             <input class="form-control" type="date" name="end">
                         </div>
                         <div class="box2">
-                            <label id="car_pricepay"> فترة الصيانه بالايام <span> * </span> </label>
-                            <input class="form-control" type="number" name="visit_period" required>
+                            <label id="car_pricepay"> عدد الزيارات <span> * </span> </label>
+                            <input class="form-control" type="number" name="num_visit" required>
                         </div>
                         <div class="box2">
                             <label id="name_en"> حالة الصيانه </label>
@@ -56,7 +58,7 @@
             $name = $_POST['name'];
             $start = $_POST['start'];
             $end = $_POST['end'];
-            $visit_period = $_POST['visit_period'];
+            $num_visit = $_POST['num_visit'];
             $active = $_POST['active'];
             $note = $_POST['note'];
             /// More Validation To Show Error
@@ -71,13 +73,13 @@
             }
             if (empty($formerror)) {
                 $stmt = $connect->prepare("INSERT INTO fire (name,start,
-                end,visit_period,active,note)
+                end,num_visit,active,note)
                 VALUES (:zname,:zstart,:zend,:zperoid,:zactive,:znote)");
                 $stmt->execute([
                     'zname' => $name,
                     'zstart' => $start,
                     'zend' => $end,
-                    'zperoid' => $visit_period,
+                    'zperoid' => $num_visit,
                     'zactive' => $active,
                     'znote' => $note,
                 ]);
@@ -87,7 +89,7 @@
                     </div> -->
 </div>
 <?php
-                    $stmt = $connect->prepare('SELECT * FROM company ORDER BY com_id DESC LIMIT 1');
+                    $stmt = $connect->prepare('SELECT * FROM fire ORDER BY fire_id DESC LIMIT 1');
                     $stmt->execute();
                     $allcom = $stmt->fetchAll();
                     foreach ($allcom as $com) {
@@ -104,10 +106,10 @@
                             $due_dates[] = $sales_due_date;
                             $time = date('Y-m-d', strtotime('+' . $time_to_visit . 'day', strtotime($sales_due_date)));
                             $sales_due_date = $time;
-                            $stmt  = $connect->prepare('INSERT INTO appointsment (com_id,visit_date)
-        VALUES(:zcom_id,:zvisit_date)');
+                            $stmt  = $connect->prepare('INSERT INTO fire_appointment (fire_id,visit_date)
+        VALUES(:zfire_id,:zvisit_date)');
                             $stmt->execute(array(
-                                'zcom_id' => $com['com_id'],
+                                'zfire_id' => $com['fire_id'],
                                 'zvisit_date' => $time
                             ));
                         }
@@ -115,11 +117,9 @@
 ?>
 
 <div class='container'>
-    <div class='alert alert-success' role='alert'> تم اضافة شركة جديدة بنجاح </div>
+    <div class='alert alert-success' role='alert'> تم اضافة صيانة جديدة بنجاح </div>
 </div>
-
-
-<?php header('refresh:3;url=main.php?dir=company&page=report'); ?>
+<?php header('refresh:3;url=main.php?dir=fire&page=report'); ?>
 <?php
                 }
             }

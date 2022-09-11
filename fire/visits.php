@@ -1,9 +1,9 @@
 <?php
 
-if (isset($_GET['com_id']) && is_numeric($_GET['com_id'])) {
-    $com_id = $_GET['com_id'];
-    $stmt = $connect->prepare('SELECT * FROM company WHERE com_id=?');
-    $stmt->execute([$com_id]);
+if (isset($_GET['fire_id']) && is_numeric($_GET['fire_id'])) {
+    $fire_id = $_GET['fire_id'];
+    $stmt = $connect->prepare('SELECT * FROM fire WHERE fire_id=?');
+    $stmt->execute([$fire_id]);
     $alltype = $stmt->fetch();
     $count = $stmt->rowCount();
     if ($count > 0) { ?>
@@ -15,7 +15,7 @@ if (isset($_GET['com_id']) && is_numeric($_GET['com_id'])) {
                     <li class="breadcrumb-item"> <i class="fa fa-heart"></i> <a
                             href="main.php?dir=dashboard&page=dashboard"> <?php echo $lang['website_title']; ?></a> <i
                             class="fa fa-chevron-left"></i> </li>
-                    <li class="breadcrumb-item active" aria-current="page"> توقيتات الزيارات للشركه </li>
+                    <li class="breadcrumb-item active" aria-current="page"> توقيتات  الصيانات </li>
                 </ol>
             </nav>
         </div>
@@ -24,7 +24,7 @@ if (isset($_GET['com_id']) && is_numeric($_GET['com_id'])) {
             <table id="tables" class="table table-light table-striped table-hover table-bordered">
                 <thead>
                     <tr>
-                        <th> اسم الشركة </th>
+                        <th> اسم الصيانه </th>
                         <th> تاريخ الزيارة </th>
                         <th>  حالة الزيارة </th>
                         <th> ملاحطات </th>
@@ -32,20 +32,20 @@ if (isset($_GET['com_id']) && is_numeric($_GET['com_id'])) {
                     </tr>
                 </thead>
                 <tbody> <?php
-                        $stmt = $connect->prepare('SELECT * FROM appointsment
-                        INNER JOIN company ON appointsment.com_id = company.com_id 
-                        WHERE appointsment.com_id=?');
-                        $stmt->execute(array($com_id));
+                        $stmt = $connect->prepare('SELECT * FROM fire_appointment
+                        INNER JOIN fire ON  fire_appointment.fire_id = fire.fire_id 
+                        WHERE fire_appointment.fire_id=?');
+                        $stmt->execute(array($fire_id));
                         $alltype = $stmt->fetchAll();
                         foreach ($alltype as $type) { ?>
                         <tr>
-                        <td><?php echo $type['com_name']; ?> </td>
+                        <td><?php echo $type['name']; ?> </td>
                         <td><?php echo $type['visit_date']; ?> </td>
                         <td><?php echo $type['visit_status']; ?> </td>
                         <td><?php echo $type['visit_note']; ?> </td>
                         <td>
                             <a class=" btn btn-success"
-                                href="main.php?dir=company&page=edit_visit&visit_id=<?php echo $type['appoint_id']; ?> ">
+                                href="main.php?dir=fire&page=edit_visit&visit_id=<?php echo $type['appoint_id']; ?> ">
                                 <i class="fa fa-edit"></i>
                             </a>
                         </td>
@@ -54,7 +54,6 @@ if (isset($_GET['com_id']) && is_numeric($_GET['com_id'])) {
             </table>
         </div>
     </div>
-</div>
 </div>
 <?php
     }
