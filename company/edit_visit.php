@@ -7,7 +7,6 @@ if (isset($_GET['visit_id']) && is_numeric($_GET['visit_id'])) {
     $alltype = $stmt->fetch();
     $count = $stmt->rowCount();
     if ($count > 0) { ?>
-
 <div class="container">
 
     <!-- start new data -->
@@ -50,7 +49,7 @@ if (isset($_GET['visit_id']) && is_numeric($_GET['visit_id'])) {
                     
                     <div class="box submit_box">
                         <input class="btn btn-primary text-center" name="add_car" type="submit"
-                            value="تعديل الزيارة">
+                            value="تعديل الزيارة وارسال الي الشركه">
                     </div>
                 </div>
             </form>

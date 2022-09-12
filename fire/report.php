@@ -35,10 +35,10 @@
                         <td>
                         <?php
                         if($type['active'] == "فعال"){ ?>
-                            <button class="btn btn-sm bg-success"> <?php echo $type['active']; ?>  </button>
+                            <button class="btn btn-sm bg-success"> <?php echo $lang['active']; ?>  </button>
                             <?php
                         }else{?>
-                        <button class="btn btn-sm bg-warning"> <?php echo $type['active']; ?>  </button>
+                        <button class="btn btn-sm bg-warning"> <?php echo $lang['no_active']; ?>  </button>
                         <?php
                         }
                         ?>

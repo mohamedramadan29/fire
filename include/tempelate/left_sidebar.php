@@ -57,7 +57,7 @@
                           <li class="nav-item" id="lnk-add-fire">
                               <a href="main.php?dir=fire&page=add" class="nav-link">
                                   <i class="fa fa-plus color2"></i>
-                                  <p> اضافة طفاية جديد </p>
+                                  <p> اضافة صيانة جديده </p>
                               </a>
                           </li>
                           <li class="nav-item" id="lnk-rep-fire">
