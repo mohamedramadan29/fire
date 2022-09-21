@@ -27,6 +27,10 @@ if (isset($_GET['dir'])) {
     elseif ($dir == 'fire') {
         include 'fire/lang/' . $_SESSION['lang'] . '.php';
     }
+    
+    elseif ($dir == 'reports') {
+        include 'reports/lang/' . $_SESSION['lang'] . '.php';
+    }
 } else {
     include 'languages/lang/' . $_SESSION['lang'] . '.php';
 }

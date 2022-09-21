@@ -1,9 +1,10 @@
 <?php
-$date = date("Y-m-d");
+//$date = date("Y-m-d");
+$date = date("Y-m-d", strtotime("-3 days"));
 //  echo $date;
 $stmt = $connect->prepare("SELECT * FROM appointsment 
     INNER JOIN company ON company.com_id = appointsment.com_id 
-     WHERE visit_date=?");
+    WHERE visit_date=?");
 $stmt->execute(array($date));
 $allvisitdate = $stmt->fetchAll();
 $count = $stmt->rowCount();
@@ -70,7 +71,7 @@ if ($count2 > 0) {
                         //echo $company_name;
                 ?>
                         <a href="main.php?dir=company&page=visits&com_id=<?php echo $visit_date["com_id"]; ?>" class="dropdown-item">
-                            <i class="fas fa-envelope mr-2"></i>  زيارة اليوم في   <?php echo  $company_name; ?>
+                            <i class="fas fa-envelope mr-2"></i>  لديك  زيارة في شركه  <?php echo  $company_name; ?>
                         </a>
                         <div class="dropdown-divider"></div>
                 <?php
@@ -96,7 +97,7 @@ if ($count2 > 0) {
                         //echo $company_name;
                 ?>
                         <a href="main.php?dir=fire&page=visits&fire_id=<?php echo $visit_date2["fire_id"]; ?>" class="dropdown-item">
-                            <i class="fas fa-envelope mr-2"></i>  زيارة اليوم في   <?php echo  $company_name; ?>
+                            <i class="fas fa-envelope mr-2"></i>  لديك  زيارة في شركه  <?php echo  $company_name; ?>
                         </a>
                         <div class="dropdown-divider"></div>
                 <?php

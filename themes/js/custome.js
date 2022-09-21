@@ -415,6 +415,16 @@ $(document).ready(function () {
     }
   }
 
+  if (window.location.href.indexOf("dir=reports") != -1) {
+    $("#lnk-reports").addClass("active menu-is-opening menu-open");
+    if (window.location.href.indexOf("add") != -1) {
+      $("#lnk-add-report").addClass("active-tab");
+    }else if(window.location.href.indexOf("company_report") != -1){
+      $("#lnk-rep-report_company").addClass("active-tab");
+    } else {
+      $("#lnk-rep-report").addClass("active-tab");
+    }
+  }
   $("#tableone").DataTable({
     responsive: true,
     bLengthChange: false,

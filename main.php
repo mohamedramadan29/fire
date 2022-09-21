@@ -56,6 +56,12 @@ include $tem . 'left_sidebar.php';
         elseif ($dir == 'fire' && $page == 'edit_visit') {
             include 'fire/edit_visit.php';
         }
+        // START COMPANY
+        if ($dir == 'reports' && $page == 'company_report') {
+            include 'reports/company_report.php';
+        }if ($dir =='reports' && $page == 'fire_report') {
+            include 'reports/fire_report.php';
+        }
         // END COMPANY
         // END ADMIN PROFILE
         // END NEW WEBSITE
@@ -63,6 +69,10 @@ include $tem . 'left_sidebar.php';
         elseif ($dir = 'dashboard' && $page == 'dashboard') {
             include 'dashboard.php';
         }
+        // START REPORT 
+
+        
+
     } else {
         header('Location:index.php');
         exit();

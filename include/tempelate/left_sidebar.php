@@ -68,6 +68,31 @@
                           </li>
                       </ul>
                   </li>
+
+                  <li class="nav-item" id="lnk-reports">
+                      <a href="#" class="nav-link nav-link2">
+                          <i class="fa fa-chart-area color4"></i>
+                          <p>
+                              التقارير
+                              <i class="right fas fa-angle-left "></i>
+                          </p>
+                      </a>
+                      <ul class="nav nav-treeview">
+                           
+                          <li class="nav-item" id="lnk-rep-report">
+                              <a href="main.php?dir=reports&page=fire_report" class="nav-link">
+                                  <i class="fa fa-chart-area nav-icon color3"></i>
+                                  <p>  تقارير صيانة  الطفايات</p>
+                              </a>
+                          </li>
+                          <li class="nav-item" id="lnk-rep-report_company">
+                              <a href="main.php?dir=reports&page=company_report" class="nav-link">
+                                  <i class="fa fa-chart-area nav-icon color3"></i>
+                                  <p>  تقارير صيانة  الشركات</p>
+                              </a>
+                          </li>
+                      </ul>
+                  </li>
                   <li class="nav-item">
                       <a href="signout.php" class="nav-link">
                           <i class="fa-solid fa-arrow-right-from-bracket color11"></i>
