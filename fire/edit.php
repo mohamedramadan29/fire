@@ -31,12 +31,12 @@ if (isset($_GET['fire_id']) && is_numeric($_GET['fire_id'])) {
                                     <input required class="form-control" type="text" name="name" value="<?php echo $alltype["name"] ?>">
                                 </div>
                                 <div class="box2">
-                                    <label id="car_model"> بداية الصيانة </label>
-                                    <input class="form-control" type="date" name="start" value="<?php echo $alltype["start"] ?>">
+                                    <label id="car_model"> بداية الصيانة </label> 
+                                    <input class="form-control" type="date" name="start" value="<?php echo $alltype["start"] ?>"   data-date="" data-date-format="DD/MM/YYYY">
                                 </div>
                                 <div class="box2">
                                     <label id="car_model"> نهاية الصيانة </label>
-                                    <input class="form-control" type="date" name="end" value="<?php echo $alltype["end"] ?>">
+                                    <input class="form-control" type="date" name="end" value="<?php echo $alltype["end"] ?>"   data-date="" data-date-format="DD/MM/YYYY">
                                 </div>
                                 <div class="box2">
                                     <label id="car_pricepay"> عدد الزيارات <span> * </span> </label>

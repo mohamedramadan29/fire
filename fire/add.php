@@ -32,11 +32,11 @@
                         </div>
                         <div class="box2">
                             <label id="car_model"> بداية الصيانه </label>
-                            <input class="form-control" type="date" name="start">
+                            <input class="form-control" type="date" name="start"  data-date="" data-date-format="DD/MM/YYYY" value="">
                         </div>
                         <div class="box2">
                             <label id="car_model"> نهاية الصيانه </label>
-                            <input class="form-control" type="date" name="end">
+                            <input class="form-control" type="date" name="end"   data-date="" data-date-format="DD/MM/YYYY" value="">
                         </div>
                         <div class="box2">
                             <label id="car_pricepay"> عدد الزيارات <span> * </span> </label>

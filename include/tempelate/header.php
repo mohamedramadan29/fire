@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.css">
     <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <link rel="stylesheet" href="<?php echo $css; ?>bootstrap-datepicker.css">
     <link rel="stylesheet" href="<?php echo $css; ?>jquery.timepicker.css">
@@ -39,9 +40,6 @@
 
     <link href="<?php echo $css; ?>custome2.css" rel="stylesheet">
     <?php } ?>
-
-
-
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

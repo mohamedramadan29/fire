@@ -30,12 +30,14 @@
                         </div>
                         <div class="box2">
 
+                        <input type="" class="form-control selector">
+
                             <label id="car_model"> بداية العقد </label>
-                            <input class="form-control" type="date" name="start">
+                            <input class="form-control" type="date" name="start" data-date="" data-date-format="DD/MM/YYYY"  value="2022-09-29" > 
                         </div>
                         <div class="box2">
                             <label id="car_model"> نهاية العقد </label>
-                            <input class="form-control" type="date" name="end">
+                            <input class="form-control" type="date" name="end" data-date="" data-date-format="DD/MM/YYYY"  value="2022-09-29" >
                         </div>
                         <div class="box2">
                             <label id="car_pricepay"> عدد الزيارات <span> * </span> </label>

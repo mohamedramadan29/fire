@@ -17,8 +17,10 @@ $.widget.bridge('uibutton', $.ui.button)
 <!--<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>  -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- overlayScrollbars -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
 <!-- popper js -->
 <script src="<?php echo $js; ?>popper.min.js"></script>
 <script src="https://kit.fontawesome.com/588e070751.js" crossorigin="anonymous"></script>

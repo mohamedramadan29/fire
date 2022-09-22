@@ -28,7 +28,7 @@ if (isset($_GET['visit_id']) && is_numeric($_GET['visit_id'])) {
                             <div class="col-lg-12">
                                 <div class="box2">
                                     <label id="name"> تاريخ الصيانه <span> * </span> </label>
-                                    <input disabled class="form-control" type="date" name="visit_date" value="<?php echo $alltype["visit_date"] ?>">
+                                    <input disabled class="form-control" type="date" name="visit_date" value="<?php echo $alltype["visit_date"] ?>"   data-date="" data-date-format="DD/MM/YYYY">
                                 </div>
                                 <div class="box2">
                                     <label id="name_en"> حالة الصيانه </label>
@@ -46,7 +46,7 @@ if (isset($_GET['visit_id']) && is_numeric($_GET['visit_id'])) {
 
                                 <div class="box2">
                                     <label id="name"> تاريخ الزيارة الفعلي<span> * </span> </label>
-                                    <input class="form-control" type="date" name="rial_date" value="">
+                                    <input class="form-control" type="date" name="rial_date"   data-date="" data-date-format="DD/MM/YYYY" value="">
                                 </div>
 
                                 <div class="box2">

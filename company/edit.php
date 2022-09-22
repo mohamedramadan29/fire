@@ -46,11 +46,11 @@ if (isset($_GET['com_id']) && is_numeric($_GET['com_id'])) {
                         </div>
                         <div class="box2">
                             <label id="car_model"> بداية العقد </label>
-                            <input class="form-control" type="date" name="start" value="<?php echo $alltype["start"]?>">
+                            <input class="form-control" type="date" name="start" value="<?php echo $alltype["start"]?>" data-date="" data-date-format="DD/MM/YYYY">
                         </div>
                         <div class="box2">
                             <label id="car_model"> نهاية العقد </label>
-                            <input class="form-control" type="date" name="end" value="<?php echo $alltype["end"]?>">
+                            <input class="form-control" type="date" name="end" value="<?php echo $alltype["end"]?>" data-date="" data-date-format="DD/MM/YYYY">
                         </div>
                         <div class="box2">
                             <label id="car_pricepay"> عدد الزيارات <span> * </span> </label>

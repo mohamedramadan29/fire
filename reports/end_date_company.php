@@ -25,7 +25,7 @@ if (isset($_SESSION["admin_id"])) {
                         <div class="col-lg-6 col-12">
                             <div class="box">
                                 <label for=""> تاريخ بداية   </label>
-                                <input class="form-control" id="startdate" type="date" name="start_date" id="start_date2" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") echo $_REQUEST['start_date']; ?>">
+                                <input class="form-control" id="startdate" type="date" name="start_date" id="start_date2" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") echo $_REQUEST['start_date']; ?>"   data-date="" data-date-format="DD/MM/YYYY" value="">
                             </div>
                         </div>
 
@@ -33,7 +33,7 @@ if (isset($_SESSION["admin_id"])) {
 
                             <div class="box">
                                 <label for=""> تاريخ نهاية   </label>
-                                <input class="form-control" id="enddate" type="date" name="end_date" id="end_date2" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") echo $_REQUEST['end_date']; ?>">
+                                <input class="form-control" id="enddate" type="date" name="end_date" id="end_date2" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") echo $_REQUEST['end_date']; ?>"   data-date="" data-date-format="DD/MM/YYYY" value="">
                             </div>
                         </div>
                     </div>
