@@ -29,6 +29,7 @@
                             <input class="form-control" type="text" name="address">
                         </div>
                         <div class="box2">
+
                             <label id="car_model"> بداية العقد </label>
                             <input class="form-control" type="date" name="start">
                         </div>

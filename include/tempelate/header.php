@@ -27,6 +27,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.css">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="<?php echo $css; ?>bootstrap-datepicker.css">
+    <link rel="stylesheet" href="<?php echo $css; ?>jquery.timepicker.css">
     <?php if ($_SESSION['lang'] == 'ar') { ?>
     <link href="<?php echo $css; ?>bootstrap_rtl.css" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/adminlte.css">

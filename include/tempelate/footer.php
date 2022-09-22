@@ -16,6 +16,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <!--<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>  -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 <!-- overlayScrollbars -->
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
@@ -25,7 +26,8 @@ $.widget.bridge('uibutton', $.ui.button)
 
 <!-- Bootstrap -->
 
-
+<script src="<?php echo $js; ?>bootstrap-datepicker.js"></script>
+<script src="<?php echo $js; ?>jquery.timepicker.min.js"></script>
 <script src="<?php echo $js; ?>custome.js"></script>
 <script src="dist/js/adminlte.js"></script>
 

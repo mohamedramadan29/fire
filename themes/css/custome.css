@@ -1991,3 +1991,7 @@ input[type="radio"], input[type="checkbox"] {
 .dropdown-item {
   text-align: initial !important;
 }
+
+.datepicker.dropdown-menu{
+  max-width: 160px !important;
+}

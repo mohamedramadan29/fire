@@ -430,4 +430,12 @@ $(document).ready(function () {
     bLengthChange: false,
   });
   $("#table").DataTable();
+
+
+  $("#book_pick_date,#book_off_date").datepicker({
+    format: "dd/mm/yyyy",
+    autoclose: true,
+  });
+  $("#time_pick").timepicker();
+ 
 });
