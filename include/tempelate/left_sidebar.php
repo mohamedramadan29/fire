@@ -82,13 +82,25 @@
                           <li class="nav-item" id="lnk-rep-report">
                               <a href="main.php?dir=reports&page=fire_report" class="nav-link">
                                   <i class="fa fa-chart-area nav-icon color3"></i>
-                                  <p>  تقارير صيانة  الطفايات</p>
+                                  <p>  تقارير زيارة صيانة  الطفايات</p>
                               </a>
                           </li>
                           <li class="nav-item" id="lnk-rep-report_company">
                               <a href="main.php?dir=reports&page=company_report" class="nav-link">
                                   <i class="fa fa-chart-area nav-icon color3"></i>
-                                  <p>  تقارير صيانة  الشركات</p>
+                                  <p>  تقارير زيارة صيانة  الشركات</p>
+                              </a>
+                          </li>
+                          <li class="nav-item" id="lnk-rep-report_end_company">
+                              <a href="main.php?dir=reports&page=end_date_company" class="nav-link">
+                                  <i class="fa fa-chart-area nav-icon color3"></i>
+                                  <p>  تقارير نهاية عقود الشركات</p>
+                              </a>
+                          </li>
+                          <li class="nav-item" id="lnk-rep-report_end_fire">
+                              <a href="main.php?dir=reports&page=end_date_fire" class="nav-link">
+                                  <i class="fa fa-chart-area nav-icon color3"></i>
+                                  <p>  تقارير نهاية عقود  الطفايات</p>
                               </a>
                           </li>
                       </ul>

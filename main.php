@@ -62,6 +62,12 @@ include $tem . 'left_sidebar.php';
         }if ($dir =='reports' && $page == 'fire_report') {
             include 'reports/fire_report.php';
         }
+        if ($dir =='reports' && $page == 'end_date_fire') {
+            include 'reports/end_date_fire.php';
+        }
+        if ($dir =='reports' && $page == 'end_date_company') {
+            include 'reports/end_date_company.php';
+        }
         // END COMPANY
         // END ADMIN PROFILE
         // END NEW WEBSITE

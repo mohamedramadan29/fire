@@ -1995,3 +1995,10 @@ input[type="radio"], input[type="checkbox"] {
 .datepicker.dropdown-menu{
   max-width: 160px !important;
 }
+.file_data{
+  background: #606060;
+    text-align: center;
+    margin: auto;
+    display: block;
+    padding: 10px;
+}

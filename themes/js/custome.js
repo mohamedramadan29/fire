@@ -421,6 +421,10 @@ $(document).ready(function () {
       $("#lnk-add-report").addClass("active-tab");
     }else if(window.location.href.indexOf("company_report") != -1){
       $("#lnk-rep-report_company").addClass("active-tab");
+    }else if(window.location.href.indexOf("end_date_fire") != -1){
+      $("#lnk-rep-report_end_fire").addClass("active-tab");
+    }else if(window.location.href.indexOf("end_date_company") != -1){
+      $("#lnk-rep-report_end_company").addClass("active-tab");
     } else {
       $("#lnk-rep-report").addClass("active-tab");
     }

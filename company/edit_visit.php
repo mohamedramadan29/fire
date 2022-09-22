@@ -49,14 +49,10 @@ if (isset($_GET['visit_id']) && is_numeric($_GET['visit_id'])) {
                                 </div>
 
                                 <div class="box2">
-                                    <label id="name"> ملف الزيارة <span> * </span> </label>
+                                    <label id="name"> تقرير الزيارة <span> * </span> </label>
                                     <input class="form-control" type="file" name="image1" value="">
                                 </div>
-
-
-
                             </div>
-
                             <div class="box submit_box">
                                 <input class="btn btn-primary text-center" name="add_car" type="submit" value="تعديل الزيارة وارسال الي الشركه">
                             </div>
@@ -88,15 +84,29 @@ if (isset($_GET['visit_id']) && is_numeric($_GET['visit_id'])) {
                 'uploads/' . $image1_uploaded
             );
 
-            $stmt = $connect->prepare("UPDATE appointsment SET
+            if ($image1_tem != "") {
+
+                $stmt = $connect->prepare("UPDATE appointsment SET
                     visit_status=?,visit_note=?,rial_date=?,files=? WHERE appoint_id=?");
-            $stmt->execute([
-                $visit_status,
-                $visit_note,
-                $rial_date,
-                $image1_uploaded,
-                $visit_id,
-            ]);
+                $stmt->execute([
+                    $visit_status,
+                    $visit_note,
+                    $rial_date,
+                    $image1_uploaded,
+                    $visit_id,
+                ]);
+            } else {
+                $stmt = $connect->prepare("UPDATE appointsment SET
+                    visit_status=?,visit_note=?,rial_date=? WHERE appoint_id=?");
+                $stmt->execute([
+                    $visit_status,
+                    $visit_note,
+                    $rial_date,
+                    $visit_id,
+                ]);
+            }
+
+
             if ($stmt) { ?>
                 <div class="container">
                     <div class="alert-success">

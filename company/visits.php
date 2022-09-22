@@ -20,14 +20,16 @@ if (isset($_GET['com_id']) && is_numeric($_GET['com_id'])) {
             </nav>
         </div>
         <!-- Content Row -->
-        <div class="table-responsive">
-            <table id="tables" class="table table-light table-striped table-hover table-bordered">
+        
+        <div class="table-responsive print_content2">
+            <table id="tables" class="table table-light  table-striped table-hover table-bordered">
                 <thead>
                     <tr>
                         <th> اسم الشركة </th>
                         <th> تاريخ الزيارة </th>
                         <th>  حالة الزيارة </th>
                         <th> ملاحطات </th>
+                        <th> تقرير الزيارة </th>
                         <th> </th>
                     </tr>
                 </thead>
@@ -44,6 +46,12 @@ if (isset($_GET['com_id']) && is_numeric($_GET['com_id'])) {
                         <td><?php echo $type['visit_status']; ?> </td>
                         <td><?php echo $type['visit_note']; ?> </td>
                         <td>
+                        <?php if(!empty($type['files'])){?>
+                             <a class="file_data" target="_blank" href="uploads/<?php echo $type['files']; ?>"> <?php echo $type['files']; ?> </a> 
+                             <?php
+                        }?>
+                            </td>
+                        <td>
                             <a class=" btn btn-success"
                                 href="main.php?dir=company&page=edit_visit&visit_id=<?php echo $type['appoint_id']; ?> ">
                                 <i class="fa fa-edit"></i>
@@ -53,6 +61,7 @@ if (isset($_GET['com_id']) && is_numeric($_GET['com_id'])) {
                                 ?> </tbody>
             </table>
         </div>
+        <button type="button" name="button" class="btn btn-danger printbtn2 btn-sm"> طباعه التقرير <i class="fa fa-print"></i></button>
     </div>
 </div>
 </div>

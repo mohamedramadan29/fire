@@ -124,7 +124,14 @@
                         $correct_date  = abs(round($correct_date / 86400));
                         $time_to_visit = ceil($correct_date / $visit_num);
                         $sales_due_date =  date("Y-m-d");
-                        for ($i = 0; $i < $visit_num; $i++) {
+                        $time = $start_date;
+                        $stmt  = $connect->prepare('INSERT INTO appointsment (com_id,visit_date)
+                        VALUES(:zcom_id,:zvisit_date)');
+                                            $stmt->execute(array(
+                                                'zcom_id' => $com['com_id'],
+                                                'zvisit_date' => $time
+                                            ));
+                        for ($i = 1; $i < $visit_num; $i++) {
                             $due_dates[] = $sales_due_date;
                             $time = date('Y-m-d', strtotime('+' . $time_to_visit . 'day', strtotime($sales_due_date)));
                             $sales_due_date = $time;
