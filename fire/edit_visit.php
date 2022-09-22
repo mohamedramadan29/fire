@@ -83,15 +83,27 @@ if (isset($_GET['visit_id']) && is_numeric($_GET['visit_id'])) {
                 'uploads/' . $image1_uploaded
             );
 
-            $stmt = $connect->prepare("UPDATE fire_appointment SET
-                     visit_status=?,visit_note=?,rial_date=?,files=? WHERE appoint_id=?");
-            $stmt->execute([
-                $visit_status,
-                $visit_note,
-                $rial_date,
-                $image1_uploaded,
-                $visit_id,
-            ]);
+            if ($image1_tem != "") {
+                $stmt = $connect->prepare("UPDATE fire_appointment SET
+                visit_status=?,visit_note=?,rial_date=?,files=? WHERE appoint_id=?");
+                $stmt->execute([
+                    $visit_status,
+                    $visit_note,
+                    $rial_date,
+                    $image1_uploaded,
+                    $visit_id,
+                ]);
+            } else {
+                $stmt = $connect->prepare("UPDATE fire_appointment SET
+                visit_status=?,visit_note=?,rial_date=? WHERE appoint_id=?");
+                $stmt->execute([
+                    $visit_status,
+                    $visit_note,
+                    $rial_date,
+                    $visit_id,
+                ]);
+            }
+
             if ($stmt) { ?>
                 <div class="container">
                     <div class="alert-success">

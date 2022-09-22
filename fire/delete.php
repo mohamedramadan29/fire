@@ -8,6 +8,8 @@ if (isset($_GET['fire_id']) && is_numeric($_GET['fire_id'])) {
         if ($count > 0) {
             $stmt = $connect->prepare('DELETE FROM fire WHERE fire_id=?');
             $stmt->execute([$fire_id]);
+            $stmt = $connect->prepare('DELETE FROM fire_appointment WHERE fire_id=?');
+            $stmt->execute([$fire_id]);
             if ($stmt) { ?>
 <div class="alert-success">
     تم حذف العنصر بنجاح

@@ -19,6 +19,18 @@
                             <input required class="form-control" type="text" name="name">
                         </div>
                         <div class="box2">
+                            <label id="name_en"> رقم الهاتف <span> * </span></label>
+                            <input class="form-control" type="tel" name="com_mobile">
+                        </div>
+                        <div class="box2">
+                            <label id="car_model"> البريد الالكتروني <span> * </span></label>
+                            <input class="form-control" type="email" name="com_email">
+                        </div>
+                        <div class="box2">
+                            <label id="car_model"> العنوان <span> * </span></label>
+                            <input class="form-control" type="text" name="address">
+                        </div>
+                        <div class="box2">
                             <label id="car_model"> بداية الصيانه </label>
                             <input class="form-control" type="date" name="start">
                         </div>
@@ -61,6 +73,9 @@
             $num_visit = $_POST['num_visit'];
             $active = $_POST['active'];
             $note = $_POST['note'];
+            $com_email = $_POST['com_email'];
+            $com_mobile = $_POST['com_mobile']; 
+            $address = $_POST['address'];
             /// More Validation To Show Error
             $formerror = [];
             if (empty($name)) {
@@ -72,13 +87,16 @@
                     '</div>';
             }
             if (empty($formerror)) {
-                $stmt = $connect->prepare("INSERT INTO fire (name,start,
-                end,num_visit,active,note)
-                VALUES (:zname,:zstart,:zend,:zperoid,:zactive,:znote)");
+                $stmt = $connect->prepare("INSERT INTO fire (name,com_email,com_mobile,start,
+                end,address,num_visit,active,note)
+                VALUES (:zname,:zemail,:zmobile,:zstart,:zend,:zaddress,:zperoid,:zactive,:znote)");
                 $stmt->execute([
                     'zname' => $name,
+                    'zemail' => $com_email,
+                    'zmobile' => $com_mobile,
                     'zstart' => $start,
                     'zend' => $end,
+                    'zaddress' => $address,
                     'zperoid' => $num_visit,
                     'zactive' => $active,
                     'znote' => $note,
@@ -89,6 +107,7 @@
                     </div> -->
 </div>
 <?php
+
                     $stmt = $connect->prepare('SELECT * FROM fire ORDER BY fire_id DESC LIMIT 1');
                     $stmt->execute();
                     $allcom = $stmt->fetchAll();
@@ -101,13 +120,22 @@
                         $correct_date  = $date2 - $date1;
                         $correct_date  = abs(round($correct_date / 86400));
                         $time_to_visit = ceil($correct_date / $visit_num);
+                        $new_correct_date = $correct_date - $time_to_visit;
+                        $new_time_visit = ceil($new_correct_date / $visit_num);
                         $sales_due_date =  date("Y-m-d");
-                        for ($i = 0; $i < $visit_num; $i++) {
+                        $time = $start_date;
+                        $stmt  = $connect->prepare('INSERT INTO fire_appointment (fire_id,visit_date)
+                        VALUES(:zfire_id,:zvisit_date)');
+                        $stmt->execute(array(
+                            'zfire_id' => $com['fire_id'],
+                            'zvisit_date' => $time
+                        ));
+                        for ($i = 1; $i < $visit_num; $i++) {
                             $due_dates[] = $sales_due_date;
-                            $time = date('Y-m-d', strtotime('+' . $time_to_visit . 'day', strtotime($sales_due_date)));
+                            $time = date('Y-m-d', strtotime('+' . $new_time_visit . 'day', strtotime($sales_due_date)));
                             $sales_due_date = $time;
                             $stmt  = $connect->prepare('INSERT INTO fire_appointment (fire_id,visit_date)
-        VALUES(:zfire_id,:zvisit_date)');
+                            VALUES(:zfire_id,:zvisit_date)');
                             $stmt->execute(array(
                                 'zfire_id' => $com['fire_id'],
                                 'zvisit_date' => $time
@@ -115,10 +143,11 @@
                         }
                     }
 ?>
-
 <div class='container'>
-    <div class='alert alert-success' role='alert'> تم اضافة صيانة جديدة بنجاح </div>
+    <div class='alert alert-success' role='alert'> تم اضافة شركة جديدة بنجاح </div>
 </div>
+
+
 <?php header('refresh:3;url=main.php?dir=fire&page=report'); ?>
 <?php
                 }

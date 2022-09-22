@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$pagetitle = "  تقرير عن العقود ";
+$pagetitle = " تقرير عن العقود ";
 
 if (isset($_SESSION["admin_id"])) {
 ?>
@@ -10,12 +10,12 @@ if (isset($_SESSION["admin_id"])) {
                 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"> <i class="fa fa-heart"></i> <a href="main.php?dir=dashboard&page=dashboard"> موسسة انطفاء </a> <i class="fa fa-chevron-left"></i> </li>
-                        <li class="breadcrumb-item active" aria-current="page"> عمل تقارير   شامل عن العقود </li>
+                        <li class="breadcrumb-item active" aria-current="page"> عمل تقارير   شامل عن عقود الشركات </li>
                     </ol>
                 </nav>
             </div>
             <div class="title text-right">
-                <h6> <i class="fa fa-plus"></i>  عمل تقارير   شامل عن العقود  </h6>
+                <h6> <i class="fa fa-plus"></i>  عمل تقارير شامل عن  عقود الشركات  </h6>
             </div>
 
             <div class="myform">
@@ -66,7 +66,7 @@ if (isset($_SESSION["admin_id"])) {
                                 <tr>
                                     <th> اسم  الشركة </th>
                                     <th> البريد الالكتروني </th>
-                                    <th>    رقم الهاتف    </th>
+                                    <th> رقم الهاتف    </th>
                                     <th> بداية العقد </th>
                                     <th> نهاية العقد </th>
                                     <th> العنوان </th>

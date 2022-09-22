@@ -1996,9 +1996,7 @@ input[type="radio"], input[type="checkbox"] {
   max-width: 160px !important;
 }
 .file_data{
-  background: #606060;
-    text-align: center;
-    margin: auto;
-    display: block;
-    padding: 10px;
+  background-color: #0083d2;
+  display: block;
+  padding: 10px;
 }

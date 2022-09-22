@@ -122,18 +122,21 @@
                         $visit_num = $com['num_visit'];
                         $correct_date  = $date2 - $date1;
                         $correct_date  = abs(round($correct_date / 86400));
+
                         $time_to_visit = ceil($correct_date / $visit_num);
+                        $new_correct_date = $correct_date - $time_to_visit;
+                        $new_time_visit = ceil($new_correct_date / $visit_num);
                         $sales_due_date =  date("Y-m-d");
                         $time = $start_date;
                         $stmt  = $connect->prepare('INSERT INTO appointsment (com_id,visit_date)
                         VALUES(:zcom_id,:zvisit_date)');
-                                            $stmt->execute(array(
-                                                'zcom_id' => $com['com_id'],
-                                                'zvisit_date' => $time
-                                            ));
+                        $stmt->execute(array(
+                            'zcom_id' => $com['com_id'],
+                            'zvisit_date' => $time
+                        ));
                         for ($i = 1; $i < $visit_num; $i++) {
                             $due_dates[] = $sales_due_date;
-                            $time = date('Y-m-d', strtotime('+' . $time_to_visit . 'day', strtotime($sales_due_date)));
+                            $time = date('Y-m-d', strtotime('+' . $new_time_visit . 'day', strtotime($sales_due_date)));
                             $sales_due_date = $time;
                             $stmt  = $connect->prepare('INSERT INTO appointsment (com_id,visit_date)
         VALUES(:zcom_id,:zvisit_date)');
@@ -144,7 +147,6 @@
                         }
                     }
 ?>
-
 <div class='container'>
     <div class='alert alert-success' role='alert'> تم اضافة شركة جديدة بنجاح </div>
 </div>

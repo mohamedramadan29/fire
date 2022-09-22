@@ -94,13 +94,13 @@
                           <li class="nav-item" id="lnk-rep-report_end_company">
                               <a href="main.php?dir=reports&page=end_date_company" class="nav-link">
                                   <i class="fa fa-chart-area nav-icon color3"></i>
-                                  <p>  تقارير نهاية عقود الشركات</p>
+                                  <p>  تقارير عقود الشركات</p>
                               </a>
                           </li>
                           <li class="nav-item" id="lnk-rep-report_end_fire">
                               <a href="main.php?dir=reports&page=end_date_fire" class="nav-link">
                                   <i class="fa fa-chart-area nav-icon color3"></i>
-                                  <p>  تقارير نهاية عقود  الطفايات</p>
+                                  <p>  تقارير عقود  الطفايات</p>
                               </a>
                           </li>
                       </ul>
